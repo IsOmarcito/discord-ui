@@ -8,5 +8,5 @@ let ProtobufTypes = Object.values(wpRequire.c).find(x => x?.exports?.BoolValue).
 
 UserSettingsActions.PreloadedUserSettingsActionCreators.updateAsync("appearance", data => {
     data.mobileRedesignDisabled = ProtobufTypes.BoolValue.create({value: true})
-}, UserSettingsActions.UserSettingsDelay.INFREQUENT_USER_ACTION)
+}, UserSettingsActions.UserSettingsDelay.INFREQUENT_USER_ACTION) 
 ---------------------------------------------------------------------------------------------------------------------------------------------
