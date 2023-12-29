@@ -1,0 +1,12 @@
+Codigo para volver a la antigua interfaz de Discord:
+-------------------------------------------------------------------------------------------------------------------------------------------
+let wpRequire;
+window.webpackChunkdiscord_app.push([[ Math.random() ], {}, (req) => { wpRequire = req; }]);
+
+let UserSettingsActions = Object.values(wpRequire.c).find(x => x?.exports?.PreloadedUserSettingsActionCreators).exports;
+let ProtobufTypes = Object.values(wpRequire.c).find(x => x?.exports?.BoolValue).exports;
+
+UserSettingsActions.PreloadedUserSettingsActionCreators.updateAsync("appearance", data => {
+    data.mobileRedesignDisabled = ProtobufTypes.BoolValue.create({value: true})
+}, UserSettingsActions.UserSettingsDelay.INFREQUENT_USER_ACTION)
+---------------------------------------------------------------------------------------------------------------------------------------------
